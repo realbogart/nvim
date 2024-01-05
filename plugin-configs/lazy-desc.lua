@@ -6,6 +6,18 @@ return {
   "folke/which-key.nvim",
 
   {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function ()
+      require "plugin-configs.harpoon"
+    end,
+    lazy = false
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
