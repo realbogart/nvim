@@ -5,17 +5,8 @@ return {
   "tpope/vim-sleuth",
   "folke/which-key.nvim",
 
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    config = function ()
-      require "plugin-configs.harpoon"
-    end,
-    lazy = false
-  },
+  require("lazy.harpoon"),
+  require("lazy.telescope"),
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -158,29 +149,10 @@ return {
   { "numToStr/Comment.nvim", opts = {} },
 
   {
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-        cond = function()
-          return vim.fn.executable "make" == 1
-        end,
-      },
-    },
-    config = function()
-      require("plugin-configs.telescope")
-    end,
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    build = ":TSUpdate",
   },
 }
 
