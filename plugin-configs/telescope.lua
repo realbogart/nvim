@@ -48,9 +48,19 @@ local opts = {
   extensions_list = { "themes", "terms" },
 }
 
+-- General
 vim.keymap.set("n", "<leader>tt", "<cmd> Telescope <CR>", { desc = "Telescope" })
 vim.keymap.set("n", "<leader>j", "<cmd> Telescope jumplist <CR>", { desc = "Telescope jumplist" })
 vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
+
+-- File search
+vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>fa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", { desc = "Find all" })
+vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Find help tags" })
+vim.keymap.set("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>", { desc = "Find oldfiles" })
+vim.keymap.set("n", "<leader>fz", "<cmd> Telescope current_buffer_fuzzy_find <CR>", { desc = "Find in current buffer" })
 
 -- Git bindings
 vim.keymap.set("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Git files" })
