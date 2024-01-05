@@ -77,4 +77,5 @@ vim.keymap.set("n", "<leader>lb", "<cmd> Telescope lsp_document_symbols<CR>", { 
 vim.keymap.set("n", "<leader>le", "<cmd> Telescope diagnostics<CR>", { desc = "LSP diagnostics" })
 
 telescope.setup(opts)
+telescope.load_extension("fzf")
 
