@@ -10,6 +10,10 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Center search backward" })
 
 -- Insert mode
 vim.keymap.set("i", "kj", "<esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move right" })
 
 -- Visual mode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move visual up" })
