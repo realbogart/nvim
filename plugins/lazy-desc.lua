@@ -3,6 +3,7 @@ return {
   "tpope/vim-rhubarb",
   "christoomey/vim-tmux-navigator",
   "tpope/vim-sleuth",
+  "folke/which-key.nvim",
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -34,8 +35,6 @@ return {
       "rafamadriz/friendly-snippets",
     },
   },
-
-  { "folke/which-key.nvim", opts = {} },
 
   {
     "lewis6991/gitsigns.nvim",

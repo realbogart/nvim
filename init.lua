@@ -8,9 +8,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup( require("lazy-desc"), {})
-require("options")
-require("keymaps")
+require("lazy").setup( require("plugins.lazy-desc"), {})
+require("global-options")
+require("global-keymaps")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
