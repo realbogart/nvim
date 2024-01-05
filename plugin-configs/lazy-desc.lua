@@ -158,6 +158,9 @@ return {
         end,
       },
     },
+    config = function()
+      require("plugin-configs.telescope")
+    end,
   },
 
   {
