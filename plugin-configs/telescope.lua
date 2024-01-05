@@ -5,16 +5,7 @@ telescope_actions = require("telescope.actions")
 
 local opts = {
   defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "-L",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
+    vimgrep_arguments = { "rg", "-L", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
     prompt_prefix = "   ",
     selection_caret = "  ",
     entry_prefix = "  ",
@@ -57,4 +48,23 @@ local opts = {
   extensions_list = { "themes", "terms" },
 }
 
+vim.keymap.set("n", "<leader>tt", "<cmd> Telescope <CR>", { desc = "Telescope" })
+vim.keymap.set("n", "<leader>j", "<cmd> Telescope jumplist <CR>", { desc = "Telescope jumplist" })
+vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
+
+-- Git bindings
+vim.keymap.set("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Git files" })
+vim.keymap.set("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
+vim.keymap.set("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Git commits" })
+vim.keymap.set("n", "<leader>gh", "<cmd> Telescope git_bcommits <CR>", { desc = "Git buffer commits" })
+
+-- LSP bindings
+vim.keymap.set("n", "<leader>lr", "<cmd> Telescope lsp_references include_current_line=true<CR>", { desc = "LSP references" })
+vim.keymap.set("n", "<leader>ld", "<cmd> Telescope lsp_definitions<CR>", { desc = "LSP definitions" })
+vim.keymap.set("n", "<leader>li", "<cmd> Telescope lsp_implementations<CR>", { desc = "LSP implementations" })
+vim.keymap.set("n", "<leader>ls", "<cmd> Telescope lsp_workspace_symbols<CR>", { desc = "LSP workspace symbols" })
+vim.keymap.set("n", "<leader>lb", "<cmd> Telescope lsp_document_symbols<CR>", { desc = "LSP document symbols" })
+vim.keymap.set("n", "<leader>le", "<cmd> Telescope diagnostics<CR>", { desc = "LSP diagnostics" })
+
 telescope.setup(opts)
+
