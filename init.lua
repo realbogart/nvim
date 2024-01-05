@@ -33,13 +33,10 @@ require("lazy").setup({
     },
   },
 
-  -- Useful plugin to show you pending keybinds.
   { "folke/which-key.nvim", opts = {} },
   {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
     opts = {
-      -- See `:help gitsigns.txt`
       signs = {
         add = { text = "+" },
         change = { text = "~" },
@@ -110,15 +107,22 @@ require("lazy").setup({
     },
   },
 
+  -- {
+  --   "drewtempelmeyer/palenight.vim",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme "palenight"
+  --   end,
+  -- },
+
   {
-    -- Theme inspired by Atom
     "navarasu/onedark.nvim",
     priority = 1000,
     config = function()
       vim.cmd.colorscheme "onedark"
     end,
   },
-
+  
   {
     -- Set lualine as statusline
     "nvim-lualine/lualine.nvim",
