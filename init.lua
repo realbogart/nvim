@@ -1,3 +1,8 @@
+-- Source vimrc.lua
+local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+vim.cmd.source(vimrc)
+
+-- Set leaderkey to space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
