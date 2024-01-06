@@ -17,7 +17,6 @@ return {
   
   "tpope/vim-rhubarb",
   "tpope/vim-sleuth",
-  "tpope/vim-unimpaired",
   "christoomey/vim-tmux-navigator",
   "folke/which-key.nvim",
 
