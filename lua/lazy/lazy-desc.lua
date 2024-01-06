@@ -15,10 +15,9 @@ return {
   --   end,
   -- },
   
-  "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
-  "christoomey/vim-tmux-navigator",
   "tpope/vim-sleuth",
+  "christoomey/vim-tmux-navigator",
   "folke/which-key.nvim",
 
   require("lazy.harpoon"),
@@ -26,6 +25,7 @@ return {
   require("lazy.nvim-tree"),
   require("lazy.gitsigns"),
   require("lazy.obsidian"),
+  require("lazy.fugitive"),
 
   {
     "neovim/nvim-lspconfig",
