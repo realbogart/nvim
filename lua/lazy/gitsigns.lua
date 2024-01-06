@@ -19,9 +19,9 @@ return {
       end
 
       -- Navigation
-      map({ "n", "v" }, "<leader>gn", function()
+      map({ "n", "v" }, "gn", function()
         if vim.wo.diff then
-          return "<leader>gn"
+          return "gn"
         end
         vim.schedule(function()
           gs.next_hunk()
@@ -29,9 +29,9 @@ return {
         return "<Ignore>"
       end, { expr = true, desc = "Jump to next hunk" })
 
-      map({ "n", "v" }, "<leader>gN", function()
+      map({ "n", "v" }, "gp", function()
         if vim.wo.diff then
-          return "<leader>gN"
+          return "gp"
         end
         vim.schedule(function()
           gs.prev_hunk()
@@ -39,10 +39,10 @@ return {
         return "<Ignore>"
       end, { expr = true, desc = "Jump to previous hunk" })
 
-      map("v", "<leader>gs", function() gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" } end, { desc = "stage git hunk" })
-      map("v", "<leader>gr", function() gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" } end, { desc = "reset git hunk" })
-      map("n", "<leader>gs", gs.stage_hunk, { desc = "git stage hunk" })
-      map("n", "<leader>gr", gs.reset_hunk, { desc = "git reset hunk" })
+      map("v", "gs", function() gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" } end, { desc = "stage git hunk" })
+      map("v", "gr", function() gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" } end, { desc = "reset git hunk" })
+      map("n", "gs", gs.stage_hunk, { desc = "git stage hunk" })
+      map("n", "gr", gs.reset_hunk, { desc = "git reset hunk" })
 
       map("n", "<leader>gS", gs.stage_buffer, { desc = "git Stage buffer" })
       map("n", "<leader>gu", gs.undo_stage_hunk, { desc = "undo stage hunk" })
