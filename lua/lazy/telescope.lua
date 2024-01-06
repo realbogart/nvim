@@ -56,7 +56,9 @@ return {
         -- Developer configurations: Not meant for general override
         buffer_previewer_maker = telescope_previewers.buffer_previewer_maker,
         mappings = {
-          n = { ["q"] = telescope_actions.close },
+          n = { ["q"] = telescope_actions.close,
+                ["<C-q>"] = telescope_actions.smart_send_to_qflist },
+          i = { ["<C-q>"] = telescope_actions.smart_send_to_qflist },
         },
       },
 
