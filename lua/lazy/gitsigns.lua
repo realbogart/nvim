@@ -44,14 +44,14 @@ return {
       map("n", "gs", gs.stage_hunk, { desc = "git stage hunk" })
       map("n", "gr", gs.reset_hunk, { desc = "git reset hunk" })
 
-      map("n", "<leader>gS", gs.stage_buffer, { desc = "git Stage buffer" })
-      map("n", "<leader>gu", gs.undo_stage_hunk, { desc = "undo stage hunk" })
-      map("n", "<leader>gR", gs.reset_buffer, { desc = "git Reset buffer" })
-      map("n", "<leader>gp", gs.preview_hunk, { desc = "preview git hunk" })
-      map("n", "<leader>gb", function() gs.blame_line { full = false } end, { desc = "git blame line" })
-      map("n", "<leader>gd", gs.diffthis, { desc = "git diff against index" })
-      map("n", "<leader>gD", function() gs.diffthis "~" end, { desc = "git diff against last commit" })
+      map("n", "gS", gs.stage_buffer, { desc = "git Stage buffer" })
+      map("n", "gu", gs.undo_stage_hunk, { desc = "undo stage hunk" })
+      map("n", "gR", gs.reset_buffer, { desc = "git Reset buffer" })
+      map("n", "gp", gs.preview_hunk, { desc = "preview git hunk" })
+      map("n", "gb", function() gs.blame_line { full = false } end, { desc = "git blame line" })
+      map("n", "gD", function() gs.diffthis "~" end, { desc = "git diff against last commit" })
 
+      -- map("n", "gd", gs.diffthis, { desc = "git diff against index" })
       -- map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "toggle git blame line" })
       -- map("n", "<leader>td", gs.toggle_deleted, { desc = "toggle git show deleted" })
 
