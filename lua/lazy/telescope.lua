@@ -65,7 +65,7 @@ return {
 
     -- General
     vim.keymap.set("n", "<leader>tt", "<cmd> Telescope <CR>", { desc = "Telescope" })
-    vim.keymap.set("n", "<leader>j", "<cmd> Telescope jumplist <CR>", { desc = "Telescope jumplist" })
+    -- vim.keymap.set("n", "<leader>j", "<cmd> Telescope jumplist <CR>", { desc = "Telescope jumplist" })
     vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
 
     -- File search
@@ -84,12 +84,12 @@ return {
     vim.keymap.set("n", "<leader>gh", "<cmd> Telescope git_bcommits <CR>", { desc = "Git buffer commits" })
 
     -- LSP bindings
-    vim.keymap.set("n", "<leader>lr", "<cmd> Telescope lsp_references include_current_line=true<CR>", { desc = "LSP references" })
-    vim.keymap.set("n", "<leader>ld", "<cmd> Telescope lsp_definitions<CR>", { desc = "LSP definitions" })
-    vim.keymap.set("n", "<leader>li", "<cmd> Telescope lsp_implementations<CR>", { desc = "LSP implementations" })
-    vim.keymap.set("n", "<leader>ls", "<cmd> Telescope lsp_workspace_symbols<CR>", { desc = "LSP workspace symbols" })
-    vim.keymap.set("n", "<leader>lb", "<cmd> Telescope lsp_document_symbols<CR>", { desc = "LSP document symbols" })
-    vim.keymap.set("n", "<leader>le", "<cmd> Telescope diagnostics<CR>", { desc = "LSP diagnostics" })
+    vim.keymap.set("n", "<leader>dr", "<cmd> Telescope lsp_references include_current_line=true<CR>", { desc = "LSP references" })
+    vim.keymap.set("n", "<leader>dd", "<cmd> Telescope lsp_definitions<CR>", { desc = "LSP definitions" })
+    vim.keymap.set("n", "<leader>di", "<cmd> Telescope lsp_implementations<CR>", { desc = "LSP implementations" })
+    vim.keymap.set("n", "<leader>ds", "<cmd> Telescope lsp_workspace_symbols<CR>", { desc = "LSP workspace symbols" })
+    vim.keymap.set("n", "<leader>db", "<cmd> Telescope lsp_document_symbols<CR>", { desc = "LSP document symbols" })
+    vim.keymap.set("n", "<leader>de", "<cmd> Telescope diagnostics<CR>", { desc = "LSP diagnostics" })
 
     telescope.setup(opts)
     telescope.load_extension("fzf")
