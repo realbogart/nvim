@@ -13,3 +13,14 @@ cabbrev cprev Cprev
 cabbrev lnext Lnext
 cabbrev lprev Lprev
 
+"
+" Change forward / backward keys
+"
+
+nmap ä [
+nmap ö ]
+omap ä [
+omap ö ]
+xmap ä [
+xmap ö ]
+
