@@ -25,6 +25,7 @@ return {
   require("lazy.telescope"),
   require("lazy.nvim-tree"),
   require("lazy.gitsigns"),
+  require("lazy.obsidian"),
 
   {
     "neovim/nvim-lspconfig",
