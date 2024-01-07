@@ -26,6 +26,7 @@ return {
   require("lazy.gitsigns"),
   require("lazy.obsidian"),
   require("lazy.fugitive"),
+  require("lazy.autopairs"),
 
   {
     "neovim/nvim-lspconfig",
