@@ -11,8 +11,8 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Center search backward" })
 vim.keymap.set("n", ";", ",", { desc = "Invert find" })
 vim.keymap.set("n", ",", ";", { desc = "Invert find" })
 
-vim.keymap.set("n", "]q", "<cmd> Cnext <CR>", { desc = "Quickfix next" })
-vim.keymap.set("n", "[q", "<cmd> Cprev <CR>", { desc = "Quickfix prev" })
+vim.keymap.set("n", "]f", "<cmd> Cnext <CR>", { desc = "Quickfix next" })
+vim.keymap.set("n", "[f", "<cmd> Cprev <CR>", { desc = "Quickfix prev" })
 
 -- Insert mode
 vim.keymap.set("i", "kj", "<esc>", { desc = "Exit insert mode" })
