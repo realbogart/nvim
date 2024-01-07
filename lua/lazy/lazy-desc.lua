@@ -27,6 +27,7 @@ return {
   require("lazy.obsidian"),
   require("lazy.fugitive"),
   require("lazy.autopairs"),
+  require("lazy.diffview"),
 
   {
     "neovim/nvim-lspconfig",
