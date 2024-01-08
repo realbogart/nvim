@@ -66,8 +66,7 @@ return {
     }
 
     -- General
-    vim.keymap.set("n", "<leader>tt", "<cmd> Telescope <CR>", { desc = "Telescope" })
-    -- vim.keymap.set("n", "<leader>j", "<cmd> Telescope jumplist <CR>", { desc = "Telescope jumplist" })
+    vim.keymap.set("n", "<leader>ft", "<cmd> Telescope <CR>", { desc = "Telescope" })
     vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
 
     -- File search

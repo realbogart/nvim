@@ -28,6 +28,8 @@ return {
   require("lazy.fugitive"),
   require("lazy.autopairs"),
   require("lazy.diffview"),
+  require("lazy.haskell-tools"),
+  require("lazy.trouble"),
 
   {
     "neovim/nvim-lspconfig",
