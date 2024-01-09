@@ -7,7 +7,21 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("nvim-tree").setup {}
+    local opts = {
+      disable_netrw = true,
+      hijack_netrw = true,
+      hijack_cursor = true,
+      hijack_unnamed_buffer_when_opening = false,
+      sync_root_with_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_root = false,
+      },
+      renderer = {
+        root_folder_label = false,
+      },
+    }
+    require("nvim-tree").setup(opts)
   end,
 }
 
