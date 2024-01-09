@@ -6,14 +6,6 @@ return {
       vim.cmd.colorscheme "onedark"
     end,
   },
-
-  -- {
-  --   "drewtempelmeyer/palenight.vim",
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme "palenight"
-  --   end,
-  -- },
   
   "tpope/vim-rhubarb",
   "tpope/vim-sleuth",
@@ -30,14 +22,7 @@ return {
   require("lazy.diffview"),
   require("lazy.haskell-tools"),
   require("lazy.trouble"),
-
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      { "j-hui/fidget.nvim", opts = {} },
-      "folke/neodev.nvim",
-    },
-  },
+  require("lazy.nvim-lspconfig"),
 
   {
     "hrsh7th/nvim-cmp",
