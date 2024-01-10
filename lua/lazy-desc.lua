@@ -23,6 +23,7 @@ return {
   require("lazy.haskell-tools"),
   require("lazy.trouble"),
   require("lazy.nvim-lspconfig"),
+  require("lazy.copilot"),
 
   {
     "hrsh7th/nvim-cmp",
