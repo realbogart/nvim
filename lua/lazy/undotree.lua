@@ -7,6 +7,6 @@ return {
     local opts = {}
     undotree.setup(opts)
 
-    vim.keymap.set("n", "<leader>u", "<cmd> TroubleToggle <CR>", { desc = "Toggle Trouble" })
+    vim.keymap.set("n", "<leader>u", "<cmd> UndotreeToggle <CR>", { desc = "Toggle Undotree" })
   end,
 }
