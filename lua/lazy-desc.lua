@@ -11,6 +11,7 @@ return {
   "tpope/vim-sleuth",
   "christoomey/vim-tmux-navigator",
   "folke/which-key.nvim",
+  "mbbill/undotree",
 
   require("lazy.harpoon"),
   require("lazy.telescope"),
