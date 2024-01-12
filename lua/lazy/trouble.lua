@@ -4,7 +4,11 @@ return {
   config = function()
     trouble = require("trouble")
 
-    local opts = {}
+    local opts = {
+      position = "right",
+      width = 128,
+    }
+
     trouble.setup(opts)
     vim.keymap.set("n", "<leader>t", "<cmd> TroubleToggle <CR>", { desc = "Toggle Trouble" })
   end,
