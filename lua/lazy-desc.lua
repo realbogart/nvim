@@ -23,7 +23,7 @@ return {
   require("lazy.haskell-tools"),
   require("lazy.trouble"),
   require("lazy.nvim-lspconfig"),
-  require("lazy.copilot"),
+  -- require("lazy.copilot"),
   require("lazy.undotree"),
 
   {
