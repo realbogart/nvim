@@ -15,6 +15,7 @@ return {
   require("lazy.harpoon"),
   require("lazy.telescope"),
   require("lazy.nvim-tree"),
+  require("lazy.nvim-treesitter"),
   require("lazy.gitsigns"),
   require("lazy.obsidian"),
   require("lazy.fugitive"),
@@ -56,12 +57,5 @@ return {
   },
 
   { "numToStr/Comment.nvim", opts = {} },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-  },
 }
 
