@@ -1,5 +1,5 @@
 return {
-  "sindrets/diffview.nvim",
+    "sindrets/diffview.nvim",
 
   config = function()
     vim.keymap.set("n", "<leader>gd", 

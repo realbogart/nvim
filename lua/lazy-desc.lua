@@ -10,7 +10,6 @@ return {
   "tpope/vim-rhubarb",
   "tpope/vim-sleuth",
   "christoomey/vim-tmux-navigator",
-  "folke/which-key.nvim",
 
   require("lazy.harpoon"),
   require("lazy.telescope"),
