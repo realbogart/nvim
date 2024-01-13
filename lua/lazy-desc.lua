@@ -16,6 +16,8 @@ return {
   require("lazy.telescope"),
   require("lazy.nvim-tree"),
   require("lazy.nvim-treesitter"),
+  require("lazy.nvim-lspconfig"),
+  require("lazy.nvim-cmp"),
   require("lazy.gitsigns"),
   require("lazy.obsidian"),
   require("lazy.fugitive"),
@@ -23,20 +25,8 @@ return {
   require("lazy.diffview"),
   require("lazy.haskell-tools"),
   require("lazy.trouble"),
-  require("lazy.nvim-lspconfig"),
   -- require("lazy.copilot"),
   require("lazy.undotree"),
-
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "rafamadriz/friendly-snippets",
-    },
-  },
 
   {
     "nvim-lualine/lualine.nvim",
