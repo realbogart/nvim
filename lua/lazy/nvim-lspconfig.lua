@@ -1,17 +1,17 @@
 return {
-  "neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
 
-  dependencies = {
-    { "j-hui/fidget.nvim", opts = {} },
-    "folke/neodev.nvim",
-  },
+    dependencies = {
+        { "j-hui/fidget.nvim", opts = {} },
+        "folke/neodev.nvim",
+    },
 
-  config = function()
-    local lspconfig = require('lspconfig')
-    local pyright_opts = {
-      single_file_support = true,
-    }
-    lspconfig.pyright.setup(pyright_opts)
-  end,
+    config = function()
+        local lspconfig = require('lspconfig')
+        local pyright_opts = {
+            single_file_support = true,
+        }
+        lspconfig.pyright.setup(pyright_opts)
+    end,
 }
 
