@@ -25,8 +25,9 @@ return {
   require("lazy.diffview"),
   require("lazy.haskell-tools"),
   require("lazy.trouble"),
-  -- require("lazy.copilot"),
   require("lazy.undotree"),
+  require("lazy.which-key"),
+  -- require("lazy.copilot"),
 
   {
     "nvim-lualine/lualine.nvim",
