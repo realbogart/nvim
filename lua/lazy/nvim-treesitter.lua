@@ -8,7 +8,7 @@ return {
     config = function () 
         local configs = require("nvim-treesitter.configs")
         configs.setup({
-            ensure_installed = { "c", "cpp", "lua", "python", "vim", "bash" },
+            ensure_installed = { "c", "cpp", "lua", "python", "vim", "bash", "haskell" },
             auto_install = false,
             highlight = { enable = true },
             indent = { enable = true },
@@ -32,7 +32,8 @@ return {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
                         ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
+                        -- ["ic"] = "@class.inner",
+                        -- ["ic"] = "@signature.outer",
                     },
                 },
                 move = {
@@ -40,6 +41,7 @@ return {
                     set_jumps = true, -- whether to set jumps in the jumplist
                     goto_next_start = {
                         ["]m"] = "@function.outer",
+                        ["]s"] = "@function.outer",
                         ["]]"] = "@class.outer",
                     },
                     goto_next_end = {
