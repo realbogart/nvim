@@ -1,16 +1,11 @@
 return {
-    {
-        "navarasu/onedark.nvim",
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme "onedark"
-        end,
-    },
-    
-    "tpope/vim-rhubarb",
-    "tpope/vim-sleuth",
-    "christoomey/vim-tmux-navigator",
-
+    require("lazy.vim-rhubarb"),
+    require("lazy.vim-sleuth"),
+    require("lazy.vim-tmux-navigator"),
+    require("lazy.onedark"),
+    require("lazy.lualine"),
+    require("lazy.indent-blankline"),
+    require("lazy.comment"),
     require("lazy.harpoon"),
     require("lazy.telescope"),
     require("lazy.nvim-tree"),
@@ -27,25 +22,5 @@ return {
     require("lazy.undotree"),
     require("lazy.which-key"),
     -- require("lazy.copilot"),
-
-    {
-        "nvim-lualine/lualine.nvim",
-        opts = {
-            options = {
-                icons_enabled = false,
-                theme = "onedark",
-                component_separators = "|",
-                section_separators = "",
-            },
-        },
-    },
-
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {},
-    },
-
-    { "numToStr/Comment.nvim", opts = {} },
 }
 

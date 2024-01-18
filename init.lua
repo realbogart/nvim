@@ -19,6 +19,7 @@ for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
 end
 
 require("lazy").setup( require("lazy-desc"), {})
+-- require("lazy").setup("lazy")
 require("global-options")
 require("global-keymaps")
 
