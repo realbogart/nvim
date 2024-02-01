@@ -28,3 +28,5 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move visual down" })
 -- Normal / Visual mode
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+-- Normal / Visual / Insert mode
+vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<cmd>:w<cr>", { silent = true })
