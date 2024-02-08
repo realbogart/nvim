@@ -21,6 +21,7 @@ return {
     require("lazy.trouble"),
     require("lazy.undotree"),
     require("lazy.which-key"),
+    require("lazy.mini"),
     -- require("lazy.copilot"),
 }
 
