@@ -8,6 +8,12 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center Cursor After Half-Page 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Center search forward" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Center search backward" })
 vim.keymap.set("n", "<leader>w", "<C-w>")
+vim.keymap.set("n", "<leader>lf", 
+    function()
+        vim.lsp.buf.format { async = true }
+    end,
+    { desc = "LSP formatting" }
+)
 
 vim.keymap.set("n", ";", ",", { desc = "Invert find" })
 vim.keymap.set("n", ",", ";", { desc = "Invert find" })
