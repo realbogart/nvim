@@ -9,6 +9,11 @@ return {
     ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
     config = function ()
         vim.g.haskell_tools = {
+            -- tools = {
+            --     log = {
+            --         level = vim.log.levels.TRACE,
+            --     },
+            -- },
             hls = {
                 settings = {
                     haskell = {
