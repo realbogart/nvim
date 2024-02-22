@@ -16,6 +16,7 @@ return {
             single_file_support = true,
         }
         lspconfig.pyright.setup(pyright_opts)
+        lspconfig.nil_ls.setup ({})
     end,
 }
 
