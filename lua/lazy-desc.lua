@@ -6,6 +6,7 @@ return {
     require("lazy.lualine"),
     require("lazy.indent-blankline"),
     require("lazy.comment"),
+    require("lazy.conform"),
     require("lazy.harpoon"),
     require("lazy.telescope"),
     require("lazy.nvim-tree"),
