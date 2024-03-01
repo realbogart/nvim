@@ -1,24 +1,24 @@
-return { 
-    "stevearc/conform.nvim", 
-    branch = "stable",
+return {
+	"stevearc/conform.nvim",
+	branch = "stable",
 
-    config = function()
-        local conform = require("conform")
+	config = function()
+		local conform = require("conform")
 
-        local opts = {
-            formatters_by_ft = {
-                nix = { "nixfmt" },
-            },
-        } 
+		local opts = {
+			formatters_by_ft = {
+				nix = { "nixfmt" },
+				lua = { "stylua" },
+			},
+		}
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*",
-            callback = function(args)
-                conform.format({ bufnr = args.buf })
-            end,
-        })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				conform.format({ bufnr = args.buf })
+			end,
+		})
 
-        conform.setup(opts)
-    end,
+		conform.setup(opts)
+	end,
 }
-

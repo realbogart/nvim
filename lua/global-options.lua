@@ -22,6 +22,5 @@ vim.bo.softtabstop = 0
 vim.opt.expandtab = true
 
 vim.diagnostic.config({
-    virtual_text = false,
+	virtual_text = false,
 })
-

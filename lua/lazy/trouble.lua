@@ -1,14 +1,13 @@
 return {
-    "folke/trouble.nvim",
+	"folke/trouble.nvim",
 
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-        trouble = require("trouble")
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		trouble = require("trouble")
 
-        local opts = {}
+		local opts = {}
 
-        trouble.setup(opts)
-        vim.keymap.set("n", "<leader>t", "<cmd> TroubleToggle <CR>", { desc = "Toggle Trouble" })
-    end,
+		trouble.setup(opts)
+		vim.keymap.set("n", "<leader>t", "<cmd> TroubleToggle <CR>", { desc = "Toggle Trouble" })
+	end,
 }
-

@@ -6,19 +6,26 @@ vim.cmd.source(vimrc)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Clone Lazy if it"s not available 
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+-- Clone Lazy if it"s not available
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath }
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- disable some default providers
-for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
-    vim.g["loaded_" .. provider .. "_provider"] = 0
+for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
+	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
-require("lazy").setup( require("lazy-desc"), {})
+require("lazy").setup(require("lazy-desc"), {})
 -- require("lazy").setup("lazy")
 require("global-options")
 require("global-keymaps")
@@ -26,11 +33,11 @@ require("global-keymaps")
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = "*",
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
 })
 
 -- Setup neovim lua configuration

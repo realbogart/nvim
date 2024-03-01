@@ -1,12 +1,12 @@
 return {
-    "nvim-lualine/lualine.nvim",
+	"nvim-lualine/lualine.nvim",
 
-    opts = {
-        options = {
-            icons_enabled = false,
-            theme = "onedark",
-            component_separators = "|",
-            section_separators = "",
-        },
-    },
+	opts = {
+		options = {
+			icons_enabled = false,
+			theme = "onedark",
+			component_separators = "|",
+			section_separators = "",
+		},
+	},
 }
