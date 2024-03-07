@@ -9,6 +9,8 @@ return {
 			formatters_by_ft = {
 				nix = { "nixfmt" },
 				lua = { "stylua" },
+				hcl = { "terraform_fmt" },
+				terraform = { "terraform_fmt" },
 			},
 		}
 
