@@ -11,6 +11,8 @@ return {
 				lua = { "stylua" },
 				hcl = { "terraform_fmt" },
 				terraform = { "terraform_fmt" },
+				html = { "prettierd" },
+				css = { "prettierd" },
 			},
 		}
 
