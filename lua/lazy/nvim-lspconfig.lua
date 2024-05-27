@@ -21,5 +21,6 @@ return {
 		lspconfig.pyright.setup(pyright_opts)
 		lspconfig.nil_ls.setup({})
 		lspconfig.terraformls.setup({})
+		lspconfig.zls.setup({})
 	end,
 }
