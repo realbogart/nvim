@@ -18,9 +18,21 @@ return {
 		local pyright_opts = {
 			single_file_support = true,
 		}
+
 		lspconfig.pyright.setup(pyright_opts)
 		lspconfig.nil_ls.setup({})
 		lspconfig.terraformls.setup({})
-		lspconfig.zls.setup({})
+
+		lspconfig.zls.setup({
+			on_attach = function(client, bufnr)
+				local function buf_set_keymap(...)
+					vim.api.nvim_buf_set_keymap(bufnr, ...)
+				end
+				local opts = { noremap = true, silent = true }
+
+				-- Set up key binding for zls
+				buf_set_keymap("n", "<F5>", ":!zig build run<CR>", opts)
+			end,
+		})
 	end,
 }
