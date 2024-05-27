@@ -30,8 +30,8 @@ return {
 				end
 				local opts = { noremap = true, silent = true }
 
-				-- Set up key binding for zls
-				buf_set_keymap("n", "<F5>", ":!zig build run<CR>", opts)
+				buf_set_keymap("n", "<F5>", ":!zig build run<CR><CR>", opts)
+				buf_set_keymap("n", "<F6>", ":!zig build<CR>", opts)
 			end,
 		})
 	end,
