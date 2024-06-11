@@ -13,6 +13,7 @@ return {
 				terraform = { "terraform_fmt" },
 				html = { "prettierd" },
 				css = { "prettierd" },
+				xhtml = { "prettierd" },
 			},
 		}
 
