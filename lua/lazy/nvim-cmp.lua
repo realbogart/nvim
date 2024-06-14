@@ -1,5 +1,5 @@
 return {
-	"hrsh7th/nvim-cmp",
+	dir = vim.fn.stdpath("config") .. "/plugins/nvim-cmp",
 
 	dependencies = {
 		"L3MON4D3/LuaSnip",
