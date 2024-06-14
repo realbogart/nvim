@@ -25,7 +25,7 @@ for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
-require("lazy").setup(require("lazy-desc"), {})
+require("lazy").setup(require("lazy-desc"), { checker = { enabled = false } })
 -- require("lazy").setup("lazy")
 require("global-options")
 require("global-keymaps")
