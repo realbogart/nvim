@@ -14,6 +14,7 @@ return {
 				html = { "prettierd" },
 				css = { "prettierd" },
 				xhtml = { "prettierd" },
+				cpp = { "clang-format" },
 			},
 		}
 
