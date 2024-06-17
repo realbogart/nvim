@@ -1,5 +1,5 @@
 return {
-	"nvim-tree/nvim-tree.lua",
+	dir = vim.fn.stdpath("config") .. "/plugins/nvim-tree.lua",
 
 	version = "*",
 	lazy = false,

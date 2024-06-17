@@ -1,6 +1,5 @@
 return {
-	url = "https://github.com/echasnovski/mini.nvim.git",
-	tag = "v0.13.0",
+	dir = vim.fn.stdpath("config") .. "/plugins/mini.nvim",
 
 	config = function()
 		local opts = {

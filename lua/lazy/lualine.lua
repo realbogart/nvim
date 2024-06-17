@@ -1,5 +1,5 @@
 return {
-	"nvim-lualine/lualine.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/lualine.nvim",
 
 	opts = {
 		options = {

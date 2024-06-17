@@ -1,5 +1,5 @@
 return {
-	"windwp/nvim-autopairs",
+	dir = vim.fn.stdpath("config") .. "/plugins/nvim-autopairs",
 
 	event = "InsertEnter",
 	opts = {},

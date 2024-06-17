@@ -1,3 +1,3 @@
 return {
-	"christoomey/vim-tmux-navigator",
+	dir = vim.fn.stdpath("config") .. "/plugins/vim-tmux-navigator",
 }

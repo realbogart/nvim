@@ -1,5 +1,5 @@
 return {
-	"lewis6991/gitsigns.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/gitsigns.nvim",
 
 	opts = {
 		signs = {

@@ -1,5 +1,5 @@
 return {
-	"stevearc/conform.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/conform.nvim",
 	branch = "stable",
 
 	config = function()

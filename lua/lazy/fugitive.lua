@@ -1,3 +1,3 @@
 return {
-	"tpope/vim-fugitive",
+	dir = vim.fn.stdpath("config") .. "/plugins/vim-fugitive",
 }

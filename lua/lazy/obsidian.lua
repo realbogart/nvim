@@ -1,5 +1,5 @@
 return {
-	"epwalsh/obsidian.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/obsidian.nvim",
 
 	version = "v2.5.3",
 	event = {

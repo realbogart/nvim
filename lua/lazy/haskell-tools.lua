@@ -1,5 +1,5 @@
 return {
-	"mrcjkb/haskell-tools.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/haskell-tools.nvim",
 
 	dependencies = {
 		"nvim-lua/plenary.nvim",

@@ -1,5 +1,5 @@
 return {
-	"folke/which-key.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/which-key.nvim",
 
 	config = function()
 		local wk = require("which-key")

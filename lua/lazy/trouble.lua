@@ -1,5 +1,5 @@
 return {
-	"folke/trouble.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/trouble.nvim",
 
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()

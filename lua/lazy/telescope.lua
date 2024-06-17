@@ -1,5 +1,5 @@
 return {
-	"nvim-telescope/telescope.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/telescope.nvim",
 
 	branch = "0.1.x",
 	dependencies = {

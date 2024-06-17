@@ -1,5 +1,5 @@
 return {
-	"lukas-reineke/indent-blankline.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/indent-blankline.nvim",
 	main = "ibl",
 	opts = {},
 }

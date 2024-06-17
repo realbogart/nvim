@@ -1,5 +1,5 @@
 return {
-	"ThePrimeagen/harpoon",
+	dir = vim.fn.stdpath("config") .. "/plugins/harpoon",
 
 	branch = "harpoon2",
 	dependencies = { "nvim-lua/plenary.nvim" },

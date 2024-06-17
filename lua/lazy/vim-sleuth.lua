@@ -1,3 +1,3 @@
 return {
-	"tpope/vim-sleuth",
+	dir = vim.fn.stdpath("config") .. "/plugins/vim-sleuth",
 }

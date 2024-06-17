@@ -1,3 +1,3 @@
 return {
-	"tpope/vim-rhubarb",
+	dir = vim.fn.stdpath("config") .. "/plugins/vim-rhubarb",
 }

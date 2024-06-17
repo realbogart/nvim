@@ -1,5 +1,5 @@
 return {
-	"sindrets/diffview.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/diffview.nvim",
 
 	config = function()
 		vim.keymap.set("n", "<leader>gd", function()

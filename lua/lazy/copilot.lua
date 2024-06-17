@@ -1,5 +1,5 @@
 return {
-	"zbirenbaum/copilot.lua",
+	dir = vim.fn.stdpath("config") .. "/plugins/copilot.lua",
 
 	cmd = "Copilot",
 	event = "InsertEnter",

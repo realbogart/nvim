@@ -1,5 +1,5 @@
 return {
-	"neovim/nvim-lspconfig",
+	dir = vim.fn.stdpath("config") .. "/plugins/nvim-lspconfig",
 
 	dependencies = {
 		{

@@ -1,5 +1,5 @@
 return {
-	"numToStr/Comment.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/Comment.nvim",
 
 	opts = {},
 }

@@ -1,5 +1,5 @@
 return {
-	"navarasu/onedark.nvim",
+	dir = vim.fn.stdpath("config") .. "/plugins/onedark.nvim",
 
 	priority = 1000,
 	config = function()

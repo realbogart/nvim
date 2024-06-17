@@ -1,5 +1,5 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
+	dir = vim.fn.stdpath("config") .. "/plugins/nvim-treesitter",
 
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
