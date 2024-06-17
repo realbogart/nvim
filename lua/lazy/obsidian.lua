@@ -7,7 +7,9 @@ return {
 		"BufNewFile " .. vim.fn.expand("~") .. "/obsidian/**.md",
 	},
 	dependencies = {
-		"nvim-lua/plenary.nvim",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/plenary.nvim",
+		},
 	},
 	opts = {
 		workspaces = {

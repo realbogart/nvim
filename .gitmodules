@@ -76,3 +76,9 @@
 [submodule "plugins/lazy.nvim"]
 	path = plugins/lazy.nvim
 	url = git@github.com:folke/lazy.nvim.git
+[submodule "plugins/plenary.nvim"]
+	path = plugins/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule "plugins/telescope-fzf-native.nvim"]
+	path = plugins/telescope-fzf-native.nvim
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git

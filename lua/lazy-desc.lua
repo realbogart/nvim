@@ -1,4 +1,5 @@
 return {
+	require("lazy.plenary"),
 	require("lazy.vim-rhubarb"),
 	require("lazy.vim-sleuth"),
 	require("lazy.vim-tmux-navigator"),

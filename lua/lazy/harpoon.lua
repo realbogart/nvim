@@ -2,7 +2,11 @@ return {
 	dir = vim.fn.stdpath("config") .. "/plugins/harpoon",
 
 	branch = "harpoon2",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/plenary.nvim",
+		},
+	},
 	lazy = false,
 	config = function()
 		local harpoon = require("harpoon")

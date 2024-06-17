@@ -3,9 +3,12 @@ return {
 
 	branch = "0.1.x",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/plenary.nvim",
+		},
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
+			-- dir = vim.fn.stdpath("config") .. "/plugins/telescope-fzf-native.nvim",
 			build = "make",
 			cond = function()
 				return vim.fn.executable("make") == 1
