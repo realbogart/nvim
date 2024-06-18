@@ -3,14 +3,16 @@ return {
 
 	dependencies = {
 		{
-			"j-hui/fidget.nvim",
+			dir = vim.fn.stdpath("config") .. "/plugins/fidget.nvim",
 			opts = {
 				progress = {
 					ignore_empty_message = true,
 				},
 			},
 		},
-		"folke/neodev.nvim",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/neodev.nvim",
+		},
 	},
 
 	config = function()

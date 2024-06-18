@@ -97,3 +97,9 @@
 [submodule "plugins/friendly-snippets"]
 	path = plugins/friendly-snippets
 	url = git@github.com:rafamadriz/friendly-snippets.git
+[submodule "plugins/fidget.nvim"]
+	path = plugins/fidget.nvim
+	url = git@github.com:j-hui/fidget.nvim.git
+[submodule "plugins/neodev.nvim"]
+	path = plugins/neodev.nvim
+	url = git@github.com:folke/neodev.nvim.git
