@@ -3,7 +3,7 @@ return {
 
 	dependencies = {
 		{
-			dir = vim.fn.stdpath("config") .. "/plugins/nvim-web-icons",
+			dir = vim.fn.stdpath("config") .. "/plugins/nvim-web-devicons",
 		},
 	},
 
