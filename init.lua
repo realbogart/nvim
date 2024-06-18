@@ -6,6 +6,8 @@ vim.cmd.source(vimrc)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.runtimepath:prepend(vim.fn.stdpath("config") .. "/treesitter-parsers")
+
 -- Clone Lazy if it"s not available
 local lazypath = vim.fn.stdpath("config") .. "/plugins/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
