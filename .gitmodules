@@ -85,3 +85,15 @@
 [submodule "plugins/LuaSnip"]
 	path = plugins/LuaSnip
 	url = git@github.com:L3MON4D3/LuaSnip.git
+[submodule "plugins/cmp_luasnip"]
+	path = plugins/cmp_luasnip
+	url = git@github.com:saadparwaiz1/cmp_luasnip.git
+[submodule "plugins/cmp-nvim-lsp"]
+	path = plugins/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+[submodule "plugins/cmp-path"]
+	path = plugins/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+[submodule "plugins/friendly-snippets"]
+	path = plugins/friendly-snippets
+	url = git@github.com:rafamadriz/friendly-snippets.git

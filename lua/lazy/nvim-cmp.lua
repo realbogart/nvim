@@ -5,10 +5,18 @@ return {
 		{
 			dir = vim.fn.stdpath("config") .. "/plugins/LuaSnip",
 		},
-		"saadparwaiz1/cmp_luasnip",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-path",
-		"rafamadriz/friendly-snippets",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/cmp_luasnip",
+		},
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/cmp-nvim-lsp",
+		},
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/cmp-path",
+		},
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/friendly-snippets",
+		},
 	},
 
 	config = function()
