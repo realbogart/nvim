@@ -81,4 +81,4 @@
 	url = git@github.com:nvim-lua/plenary.nvim.git
 [submodule "plugins/telescope-fzf-native.nvim"]
 	path = plugins/telescope-fzf-native.nvim
-	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+	url = git@github.com:realbogart/telescope-fzf-native.nvim.git

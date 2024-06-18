@@ -7,12 +7,12 @@ return {
 			dir = vim.fn.stdpath("config") .. "/plugins/plenary.nvim",
 		},
 		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			-- dir = vim.fn.stdpath("config") .. "/plugins/telescope-fzf-native.nvim",
-			build = "make",
-			cond = function()
-				return vim.fn.executable("make") == 1
-			end,
+			-- "nvim-telescope/telescope-fzf-native.nvim",
+			dir = vim.fn.stdpath("config") .. "/plugins/telescope-fzf-native.nvim",
+			-- build = "make",
+			-- cond = function()
+			-- 	return vim.fn.executable("make") == 1
+			-- end,
 		},
 	},
 	config = function()
