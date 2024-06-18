@@ -82,3 +82,6 @@
 [submodule "plugins/telescope-fzf-native.nvim"]
 	path = plugins/telescope-fzf-native.nvim
 	url = git@github.com:realbogart/telescope-fzf-native.nvim.git
+[submodule "plugins/LuaSnip"]
+	path = plugins/LuaSnip
+	url = git@github.com:L3MON4D3/LuaSnip.git

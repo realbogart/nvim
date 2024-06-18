@@ -2,7 +2,9 @@ return {
 	dir = vim.fn.stdpath("config") .. "/plugins/nvim-cmp",
 
 	dependencies = {
-		"L3MON4D3/LuaSnip",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/LuaSnip",
+		},
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
