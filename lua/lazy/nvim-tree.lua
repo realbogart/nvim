@@ -4,7 +4,9 @@ return {
 	version = "*",
 	lazy = false,
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/nvim-web-icons",
+		},
 	},
 	config = function()
 		local opts = {

@@ -1,7 +1,12 @@
 return {
 	dir = vim.fn.stdpath("config") .. "/plugins/trouble.nvim",
 
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		{
+			dir = vim.fn.stdpath("config") .. "/plugins/nvim-web-icons",
+		},
+	},
+
 	config = function()
 		trouble = require("trouble")
 

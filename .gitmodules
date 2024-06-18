@@ -103,3 +103,9 @@
 [submodule "plugins/neodev.nvim"]
 	path = plugins/neodev.nvim
 	url = git@github.com:folke/neodev.nvim.git
+[submodule "plugins/nvim-treesitter-textobjects"]
+	path = plugins/nvim-treesitter-textobjects
+	url = git@github.com:nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "plugins/nvim-web-devicons"]
+	path = plugins/nvim-web-devicons
+	url = git@github.com:nvim-tree/nvim-web-devicons.git
