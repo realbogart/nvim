@@ -13,6 +13,6 @@ return {
 		local opts = {}
 
 		trouble.setup(opts)
-		vim.keymap.set("n", "<leader>t", "<cmd> TroubleToggle <CR>", { desc = "Toggle Trouble" })
+		vim.keymap.set("n", "<leader>t", "<cmd> Trouble diagnostics toggle <CR>", { desc = "Toggle Trouble" })
 	end,
 }
