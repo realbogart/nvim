@@ -15,6 +15,7 @@ return {
 				css = { "prettierd" },
 				xhtml = { "prettierd" },
 				cpp = { "clang-format" },
+				json = { "jq" },
 			},
 		}
 
