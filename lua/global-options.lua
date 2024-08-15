@@ -3,7 +3,7 @@ vim.wo.signcolumn = "yes"
 
 vim.o.hlsearch = true
 vim.o.mouse = "a"
-vim.o.clipboard = "unnamedplus"
+vim.opt.clipboard = { "unnamed", "unnamedplus" }
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
