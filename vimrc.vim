@@ -24,3 +24,8 @@ omap ö ]
 xmap ä [
 xmap ö ]
 
+"
+" Restore cursor on exit
+"
+
+autocmd VimLeave * set guicursor=a:ver25-Cursor-lCursor-blinkwait1000-blinkon100-blinkoff100
