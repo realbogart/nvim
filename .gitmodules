@@ -109,3 +109,6 @@
 [submodule "plugins/nvim-web-devicons"]
 	path = plugins/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
+[submodule "plugins/nvim-surround"]
+	path = plugins/nvim-surround
+	url = https://github.com/kylechui/nvim-surround
