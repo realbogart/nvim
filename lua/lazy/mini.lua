@@ -2,7 +2,7 @@ return {
 	dir = vim.fn.stdpath("config") .. "/plugins/mini.nvim",
 
 	config = function()
-		local opts = {
+		local opts_ai = {
 			custom_textobjects = nil,
 			mappings = {
 				around = "a",
@@ -18,6 +18,10 @@ return {
 			search_method = "cover_or_next",
 			silent = false,
 		}
-		require("mini.ai").setup(opts)
+
+		local opts_surround = {}
+
+		require("mini.ai").setup(opts_ai)
+		require("mini.surround").setup(opts_surround)
 	end,
 }

@@ -25,5 +25,4 @@ return {
 	-- require("lazy.which-key"),
 	require("lazy.mini"),
 	-- require("lazy.copilot"),
-	require("lazy.nvim-surround"),
 }
