@@ -109,3 +109,6 @@
 [submodule "plugins/nvim-web-devicons"]
 	path = plugins/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
+[submodule "plugins/telescope-live-grep-args.nvim"]
+	path = plugins/telescope-live-grep-args.nvim
+	url = git@github.com:nvim-telescope/telescope-live-grep-args.nvim.git

@@ -10,6 +10,7 @@ return {
 	require("lazy.conform"),
 	require("lazy.harpoon"),
 	require("lazy.telescope"),
+	require("lazy.telescope-live-grep-args"),
 	require("lazy.nvim-tree"),
 	require("lazy.nvim-treesitter"),
 	require("lazy.nvim-lspconfig"),

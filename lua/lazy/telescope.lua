@@ -91,7 +91,13 @@ return {
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all" }
 		)
-		vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+		-- vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+		vim.keymap.set(
+			"n",
+			"<leader>fw",
+			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+			{ desc = "Live grep(args)" }
+		)
 		vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 		vim.keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Find help tags" })
 		vim.keymap.set("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>", { desc = "Find oldfiles" })
