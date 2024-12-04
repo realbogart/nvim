@@ -32,7 +32,7 @@ return {
 							["<C-k>"] = telescope_lga_actions.quote_prompt(),
 							["<C-i>"] = telescope_lga_actions.quote_prompt({ postfix = " --iglob " }),
 							-- freeze the current list and start a fuzzy search in the frozen list
-							-- ["<C-space>"] = actions.to_fuzzy_refine,
+							-- ["<C-r>"] = telescope_lga_actions.to_fuzzy_refine,
 						},
 					},
 				},
