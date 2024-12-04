@@ -7,6 +7,8 @@ return {
 		},
 	},
 
+	lazy = false,
+
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
@@ -22,9 +24,12 @@ return {
 			-- 	"hcl",
 			-- 	"markdown",
 			-- 	"markdown_inline",
+			-- 	"vimdoc",
+			-- 	"luadoc",
+			-- 	"query",
 			-- },
 			auto_install = false,
-			highlight = { enable = true },
+			highlight = { enable = true, additional_vim_regex_highlighting = false },
 			indent = { enable = true },
 			incremental_selection = {
 				enable = true,
