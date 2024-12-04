@@ -21,8 +21,22 @@ return {
 		telescope_sorters = require("telescope.sorters")
 		telescope_previewers = require("telescope.previewers")
 		telescope_actions = require("telescope.actions")
+		telescope_lga_actions = require("telescope-live-grep-args.actions")
 
 		local opts = {
+			extensions = {
+				live_grep_args = {
+					auto_quoting = true,
+					mappings = {
+						i = {
+							["<C-k>"] = telescope_lga_actions.quote_prompt(),
+							["<C-i>"] = telescope_lga_actions.quote_prompt({ postfix = " --iglob " }),
+							-- freeze the current list and start a fuzzy search in the frozen list
+							-- ["<C-space>"] = actions.to_fuzzy_refine,
+						},
+					},
+				},
+			},
 			defaults = {
 				vimgrep_arguments = {
 					"rg",
