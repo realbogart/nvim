@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		{
 			dir = vim.fn.stdpath("config") .. "/plugins/plenary.nvim",
+			dir = vim.fn.stdpath("config") .. "/plugins/telescope-live-grep-args.nvim",
 		},
 		{
 			-- "nvim-telescope/telescope-fzf-native.nvim",
@@ -134,5 +135,6 @@ return {
 
 		telescope.setup(opts)
 		telescope.load_extension("fzf")
+		telescope.load_extension("live_grep_args")
 	end,
 }
