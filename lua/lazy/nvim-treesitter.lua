@@ -11,6 +11,17 @@ return {
 
 	config = function()
 		local configs = require("nvim-treesitter.configs")
+		local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+
+		-- parser_configs["vimdoc"] = {
+		-- 	install_info = {
+		-- 		url = "https://github.com/neovim/tree-sitter-vimdoc",
+		-- 		files = { "src/parser.c" },
+		-- 		revision = "d2e4b5c172a109966c2ce0378f73df6cede39400",
+		-- 	},
+		-- 	filetype = "help",
+		-- }
+
 		configs.setup({
 			parser_install_dir = vim.fn.stdpath("config") .. "/treesitter-parsers",
 			-- ensure_installed = {
