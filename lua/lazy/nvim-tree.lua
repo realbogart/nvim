@@ -25,6 +25,10 @@ return {
 			renderer = {
 				root_folder_label = false,
 			},
+			view = {
+				width = 60,
+				side = "right",
+			},
 		}
 		require("nvim-tree").setup(opts)
 	end,
