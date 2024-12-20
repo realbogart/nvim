@@ -100,7 +100,7 @@ return {
 
 		-- General
 		vim.keymap.set("n", "<leader>ft", "<cmd> Telescope <CR>", { desc = "Telescope" })
-		vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
+		-- vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
 
 		-- File search
 		vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" })
@@ -140,7 +140,7 @@ return {
 		)
 
 		-- Git bindings
-		vim.keymap.set("n", "<leader>fg", "<cmd> Telescope git_files <CR>", { desc = "Git files" })
+		-- vim.keymap.set("n", "<leader>fg", "<cmd> Telescope git_files <CR>", { desc = "Git files" })
 		vim.keymap.set("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
 		vim.keymap.set("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Git commits" })
 		vim.keymap.set("n", "<leader>gh", "<cmd> Telescope git_bcommits <CR>", { desc = "Git buffer commits" })
