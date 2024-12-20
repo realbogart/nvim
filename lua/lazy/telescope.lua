@@ -29,10 +29,14 @@ return {
 					auto_quoting = true,
 					mappings = {
 						i = {
-							["<C-k>"] = telescope_lga_actions.quote_prompt(),
-							["<C-i>"] = telescope_lga_actions.quote_prompt({ postfix = " --iglob " }),
-							-- freeze the current list and start a fuzzy search in the frozen list
-							-- ["<C-r>"] = telescope_lga_actions.to_fuzzy_refine,
+							["<C-i>"] = telescope_lga_actions.quote_prompt({ postfix = " --iglob=*." }),
+							["<C-f>"] = telescope_actions.to_fuzzy_refine,
+						},
+						n = {
+							-- ["<C-i>"] = telescope_lga_actions.quote_prompt({ postfix = " --iglob=*." }),
+							["<C-f>"] = function()
+								telescope_actions.to_fuzzy_refine()
+							end,
 						},
 					},
 				},
@@ -107,10 +111,22 @@ return {
 			{ desc = "Find all" }
 		)
 		-- vim.keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<leader>fw",
+		-- 	":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+		-- 	{ desc = "Live grep(args)" }
+		-- )
 		vim.keymap.set(
 			"n",
-			"<leader>fw",
+			"<C-f>",
 			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+			{ desc = "Live grep(args)" }
+		)
+		vim.keymap.set(
+			"i",
+			"<C-f>",
+			"<ESC>:lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
 			{ desc = "Live grep(args)" }
 		)
 		vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
