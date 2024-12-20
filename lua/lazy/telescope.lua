@@ -117,18 +117,18 @@ return {
 		-- 	":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
 		-- 	{ desc = "Live grep(args)" }
 		-- )
-		vim.keymap.set(
-			"n",
-			"<C-f>",
-			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-			{ desc = "Live grep(args)" }
-		)
-		vim.keymap.set(
-			"i",
-			"<C-f>",
-			"<ESC>:lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-			{ desc = "Live grep(args)" }
-		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<C-f>",
+		-- 	":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+		-- 	{ desc = "Live grep(args)" }
+		-- )
+		-- vim.keymap.set(
+		-- 	"i",
+		-- 	"<C-f>",
+		-- 	"<ESC>:lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+		-- 	{ desc = "Live grep(args)" }
+		-- )
 		vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Find buffers" })
 		vim.keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags <CR>", { desc = "Find help tags" })
 		vim.keymap.set("n", "<leader>fo", "<cmd> Telescope oldfiles <CR>", { desc = "Find oldfiles" })

@@ -112,3 +112,6 @@
 [submodule "plugins/telescope-live-grep-args.nvim"]
 	path = plugins/telescope-live-grep-args.nvim
 	url = git@github.com:nvim-telescope/telescope-live-grep-args.nvim.git
+[submodule "plugins/fzf-lua"]
+	path = plugins/fzf-lua
+	url = git@github.com:ibhagwan/fzf-lua.git
