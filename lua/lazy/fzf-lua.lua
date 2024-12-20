@@ -6,6 +6,7 @@ return {
 		},
 	},
 	config = function()
+		local fzf_lua = require("fzf-lua")
 		local actions = require("fzf-lua.actions")
 		local opts = {
 			grep = {
