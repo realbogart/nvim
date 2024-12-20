@@ -35,6 +35,12 @@ return {
 					["enter"] = actions.file_edit_or_qf,
 				},
 			},
+			git = {
+				files = {
+					-- cmd = "git ls-files --exclude-standard --cached",
+					cmd = "git ls-files --exclude-standard",
+				},
+			},
 		}
 		require("fzf-lua").setup(opts)
 
