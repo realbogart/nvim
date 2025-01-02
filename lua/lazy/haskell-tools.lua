@@ -8,7 +8,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	branch = "2.x.x",
-	ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+	ft = { "haskell", "lhaskell" },
 	config = function()
 		vim.g.haskell_tools = {
 			-- tools = {
