@@ -24,18 +24,18 @@ return {
 		lspconfig.pyright.setup(pyright_opts)
 		lspconfig.nil_ls.setup({})
 		lspconfig.terraformls.setup({})
-		lspconfig.yamlls.setup({
-			settings = {
-				yaml = {
-					schemas = {
-						-- ["https://github.com/Azure/deployment-environments/releases/download/2022-11-11-preview/manifest.schema.json"] = "*.yml",
-						-- ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-						-- ["../path/relative/to/file.yml"] = "/.github/workflows/*",
-						-- ["/path/from/root/of/project"] = "/.github/workflows/*",
-					},
-				},
-			},
-		})
+		-- lspconfig.yamlls.setup({
+		-- 	settings = {
+		-- 		yaml = {
+		-- 			schemas = {
+		-- 				-- ["https://github.com/Azure/deployment-environments/releases/download/2022-11-11-preview/manifest.schema.json"] = "*.yml",
+		-- 				-- ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+		-- 				-- ["../path/relative/to/file.yml"] = "/.github/workflows/*",
+		-- 				-- ["/path/from/root/of/project"] = "/.github/workflows/*",
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		lspconfig.zls.setup({
 			on_attach = function(client, bufnr)

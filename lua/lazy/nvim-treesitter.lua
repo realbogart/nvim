@@ -23,32 +23,28 @@ return {
 		-- }
 
 		-- parser_configs["yaml"] = {
-		-- 	install_info = {
-		-- 		url = "https://github.com/tree-sitter-grammars/tree-sitter-yaml",
-		-- 		files = { "src/parser.c" },
-		-- 		revision = "b733d3f5f5005890f324333dd57e1f0badec5c87",
-		-- 	},
+		-- 	filetype = "yml",
 		-- }
 
 		configs.setup({
 			parser_install_dir = vim.fn.stdpath("config") .. "/treesitter-parsers",
-			-- ensure_installed = {
-			-- 	"c",
-			-- 	"cpp",
-			-- 	"lua",
-			-- 	"python",
-			-- 	"vim",
-			-- 	"bash",
-			-- 	"haskell",
-			-- 	"hcl",
-			-- 	"markdown",
-			-- 	"markdown_inline",
-			-- 	"vimdoc",
-			-- 	"luadoc",
-			-- 	"query",
-			-- 	"yaml",
-			-- },
-			auto_install = false,
+			ensure_installed = {
+				"c",
+				"cpp",
+				"lua",
+				"python",
+				"vim",
+				"bash",
+				"haskell",
+				"hcl",
+				"markdown",
+				"markdown_inline",
+				"vimdoc",
+				"luadoc",
+				"query",
+				"yaml",
+			},
+			auto_install = true,
 			highlight = { enable = true, additional_vim_regex_highlighting = false },
 			indent = { enable = true },
 			incremental_selection = {
