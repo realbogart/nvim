@@ -3,7 +3,8 @@ return {
 	require("lazy.vim-rhubarb"),
 	require("lazy.vim-sleuth"),
 	require("lazy.vim-tmux-navigator"),
-	require("lazy.onedark"),
+	-- require("lazy.onedark"),
+	require("lazy.catppuccin"),
 	require("lazy.lualine"),
 	require("lazy.indent-blankline"),
 	require("lazy.comment"),
@@ -23,7 +24,7 @@ return {
 	require("lazy.haskell-tools"),
 	require("lazy.trouble"),
 	require("lazy.undotree"),
-	-- require("lazy.which-key"),
+	require("lazy.which-key"),
 	require("lazy.mini"),
 	-- require("lazy.copilot"),
 }

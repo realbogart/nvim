@@ -115,3 +115,6 @@
 [submodule "plugins/fzf-lua"]
 	path = plugins/fzf-lua
 	url = git@github.com:ibhagwan/fzf-lua.git
+[submodule "plugins/nvim"]
+	path = plugins/nvim
+	url = git@github.com:catppuccin/nvim.git
