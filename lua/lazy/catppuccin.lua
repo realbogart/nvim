@@ -11,7 +11,7 @@ return {
 				flavour = "mocha", -- latte, frappe, macchiato, mocha
 				background = { -- :h background
 					light = "frappe",
-					dark = "mocha",
+					dark = "macchiato",
 				},
 				transparent_background = false, -- disables setting the background color.
 				show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -39,11 +39,7 @@ return {
 					operators = {},
 					-- miscs = {}, -- Uncomment to turn off hard-coded styles
 				},
-				color_overrides = {
-					mocha = {
-						base = "#000000", -- Explicitly set the background color
-					},
-				},
+				color_overrides = {},
 				custom_highlights = {
 					Normal = { bg = "#1e1e2e" }, -- Background color for Normal highlight group
 				},
@@ -64,9 +60,6 @@ return {
 		}
 
 		catppuccin.setup(opts)
-		vim.cmd("colorscheme default")
-		vim.cmd("hi clear")
-		vim.opt.background = "dark"
 		vim.cmd.colorscheme("catppuccin-macchiato")
 	end,
 }
