@@ -15,6 +15,10 @@ return {
 			hijack_cursor = true,
 			hijack_unnamed_buffer_when_opening = false,
 			sync_root_with_cwd = true,
+			git = {
+				enable = false,
+			},
+
 			filters = {
 				git_ignored = false,
 			},
