@@ -20,6 +20,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.bo.softtabstop = 0
 vim.opt.expandtab = true
+vim.opt.fileformats = { "unix", "dos" }
 
 vim.diagnostic.config({
 	virtual_text = false,

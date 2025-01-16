@@ -28,6 +28,8 @@ return {
 			view = {
 				width = 60,
 				side = "right",
+				number = true,
+				relativenumber = true,
 			},
 		}
 		require("nvim-tree").setup(opts)

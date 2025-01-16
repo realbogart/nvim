@@ -1,5 +1,6 @@
 return {
 	dir = vim.fn.stdpath("config") .. "/plugins/gitsigns.nvim",
+	enabled = true,
 
 	opts = {
 		signs = {
