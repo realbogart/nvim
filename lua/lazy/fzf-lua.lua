@@ -49,7 +49,7 @@ return {
 		vim.keymap.set("v", "<C-f>", "<cmd> FzfLua grep_visual <CR>", { desc = "Grep word under cursor" })
 		vim.keymap.set("n", "<leader>fg", "<cmd> FzfLua git_files <CR>", { desc = "Git files" })
 		vim.keymap.set("n", "<leader>ff", function()
-			fzf_lua.fzf_exec("git ls-files", { actions = { ["default"] = actions.file_edit } })
+			fzf_lua.fzf_exec("git ls-files", { actions = { ["default"] = actions.file_edit }, previewer = "builtin" })
 		end, { desc = "git files" })
 		vim.keymap.set("n", "<leader><leader>", "<cmd> FzfLua resume <CR>", { desc = "FzfLua resume" })
 	end,
