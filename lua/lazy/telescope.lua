@@ -103,7 +103,7 @@ return {
 		-- vim.keymap.set("n", "<leader><leader>", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
 
 		-- File search
-		vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" })
+		-- vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find files" })
 		vim.keymap.set(
 			"n",
 			"<leader>fa",
