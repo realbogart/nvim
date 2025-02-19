@@ -6,8 +6,6 @@ vim.cmd.source(vimrc)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.runtimepath:prepend(vim.fn.stdpath("config") .. "/treesitter-parsers")
-
 -- Clone Lazy if it"s not available
 local lazypath = vim.fn.stdpath("config") .. "/plugins/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
@@ -21,6 +19,8 @@ require("lazy").setup(require("lazy-desc"), { checker = { enabled = false } })
 -- require("lazy").setup("lazy")
 require("global-options")
 require("global-keymaps")
+
+vim.opt.runtimepath:prepend(vim.fn.stdpath("config") .. "/treesitter-parsers")
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
