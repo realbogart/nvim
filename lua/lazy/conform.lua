@@ -16,6 +16,7 @@ return {
 				xhtml = { "prettierd" },
 				cpp = { "clang-format" },
 				json = { "jq" },
+				yml = { "yamlfmt" },
 			},
 		}
 

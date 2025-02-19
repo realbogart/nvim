@@ -23,6 +23,7 @@ return {
 
 		lspconfig.pyright.setup(pyright_opts)
 		lspconfig.nil_ls.setup({})
+		lspconfig.yamlls.setup({})
 		lspconfig.terraformls.setup({})
 		-- lspconfig.yamlls.setup({
 		-- 	settings = {
