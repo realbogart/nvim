@@ -25,6 +25,10 @@ return {
 		lspconfig.nil_ls.setup({})
 		lspconfig.yamlls.setup({})
 		lspconfig.terraformls.setup({})
+		lspconfig.powershell_es.setup({
+			-- TODO: Fix path
+			bundle_path = "/nix/store/gj4l2hp703zgic62xms9z9iy3kfr70pm-powershell-editor-services-4.2.0/lib/powershell-editor-services",
+		})
 		-- lspconfig.yamlls.setup({
 		-- 	settings = {
 		-- 		yaml = {
