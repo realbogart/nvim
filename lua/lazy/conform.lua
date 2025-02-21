@@ -6,6 +6,13 @@ return {
 		local conform = require("conform")
 
 		local opts = {
+			formatters = {
+				yaml = {
+					command = "yaml",
+					args = { "--indent", "2" },
+					stdin = true,
+				},
+			},
 			formatters_by_ft = {
 				nix = { "nixfmt" },
 				lua = { "stylua" },
@@ -16,7 +23,8 @@ return {
 				xhtml = { "prettierd" },
 				cpp = { "clang-format" },
 				json = { "jq" },
-				yml = { "yamlfmt" },
+				yml = { "yaml" },
+				yaml = { "yaml" },
 			},
 		}
 
