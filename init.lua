@@ -2,10 +2,6 @@
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 vim.cmd.source(vimrc)
 
--- Set leaderkey to space
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Clone Lazy if it"s not available
 local lazypath = vim.fn.stdpath("config") .. "/plugins/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
