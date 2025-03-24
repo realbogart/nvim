@@ -6,6 +6,13 @@ let mapleader = " "
 let maplocalleader = " "
 
 "
+" Disable Space
+"
+
+nnoremap <silent> <Space> <Nop>
+vnoremap <silent> <Space> <Nop>
+
+"
 " Wrap around quickfix list
 "
 
@@ -21,6 +28,76 @@ cabbrev lnext Lnext
 cabbrev lprev Lprev
 
 "
+" Paste after/before from yank register (normal and visual)
+"
+
+nnoremap <silent> <leader>p "0p
+vnoremap <silent> <leader>p "0p
+nnoremap <silent> <leader>P "0P
+xnoremap <silent> <leader>P "0P
+
+"
+" Move cursor within insert mode
+"
+
+inoremap <silent> <C-h> <Left>
+inoremap <silent> <C-j> <Down>
+inoremap <silent> <C-k> <Up>
+inoremap <silent> <C-l> <Right>
+
+"
+" Better movement when no count is provided
+"
+
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+
+"
+" Save/quit mappings
+"
+
+nnoremap <silent> <leader>z ZZ<CR>
+nnoremap <silent> <leader>q :qa!<CR>
+
+"
+" Invert find characters
+"
+
+nnoremap <silent> ; ,
+nnoremap <silent> , ;
+
+"
+" Center cursor when navigating
+"
+
+nnoremap <silent> <C-u> <C-u>zz
+nnoremap <silent> <C-d> <C-d>zz
+nnoremap <silent> n nzzzv
+nnoremap <silent> N Nzzzv
+
+"
+" Quickfix navigation
+"
+
+nnoremap <silent> ]f :cnext<CR>
+nnoremap <silent> [f :cprev<CR>
+
+" 
+" Highlight on yank
+"
+
+augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup END
+
+"
+" Clear search highlights with <Esc>
+"
+
+nnoremap <silent> <Esc> :noh<CR>
+
+"
 " Change forward / backward keys
 "
 
@@ -30,6 +107,13 @@ omap ä [
 omap ö ]
 xmap ä [
 xmap ö ]
+
+"
+" Move selected block up and down
+"
+
+vnoremap <silent> K :m '<-2<CR>gv=gv
+vnoremap <silent> J :m '>+1<CR>gv=gv
 
 "
 " Basic UI and editing options
@@ -57,6 +141,20 @@ set shiftwidth=0          " Indent using 'tabstop' value
 set softtabstop=0         " No extra space when using <Tab> in insert mode
 set expandtab             " Use spaces instead of tabs
 set fileformats=unix,dos  " Allow Unix and DOS file formats
+
+"
+" Exit insert mode by typing "kj"
+"
+
+inoremap <silent> kj <Esc>
+
+"
+" Save file with <C-s> in Normal, Visual, and Insert modes
+"
+
+nnoremap <silent> <C-s> :w<CR>
+vnoremap <silent> <C-s> :w<CR>
+inoremap <silent> <C-s> <Esc>:w<CR>a
 
 "
 " Restore cursor on exit
