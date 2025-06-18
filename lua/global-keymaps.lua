@@ -1,20 +1,6 @@
 -- Normal mode
 vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 vim.keymap.set("n", "<leader>w", "<C->w")
--- LSP keybindings
 vim.keymap.set("n", "<leader>lf", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "LSP formatting" })
-
-vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "LSP hover documentation" })
-vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { desc = "LSP go to definition" })
-vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "LSP go to declaration" })
-vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, { desc = "LSP go to implementation" })
-vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, { desc = "LSP go to type definition" })
-vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { desc = "LSP show references" })
-vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "LSP signature help" })
-vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, { desc = "LSP rename symbol" })
-vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "LSP code actions" })
-vim.keymap.set("n", "<leader>le", vim.diagnostic.open_float, { desc = "LSP show diagnostics" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
