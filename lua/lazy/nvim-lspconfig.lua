@@ -17,13 +17,30 @@ return {
 
 	config = function()
 		local lspconfig = require("lspconfig")
+		local configs = require("lspconfig.configs")
 		local pyright_opts = {
 			single_file_support = true,
 		}
 
+		if not configs.azure_pipelines_language_server then
+			configs.azure_pipelines_language_server = {
+				default_config = {
+					cmd = { "azure-pipelines-language-server", "--stdio" },
+					filetypes = { "yaml" },
+					root_dir = lspconfig.util.root_pattern("azure-pipelines.yml", ".azure-pipelines", ".git"),
+					single_file_support = true,
+					settings = {},
+				},
+				docs = {
+					description = "Language server for Azure Pipelines YAML files",
+				},
+			}
+		end
+
+		lspconfig.azure_pipelines_language_server.setup({})
 		lspconfig.pyright.setup(pyright_opts)
 		lspconfig.nil_ls.setup({})
-		lspconfig.yamlls.setup({})
+		-- lspconfig.yamlls.setup({})
 		lspconfig.terraformls.setup({})
 		lspconfig.powershell_es.setup({
 			-- TODO: Fix path
