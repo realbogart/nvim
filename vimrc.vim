@@ -129,7 +129,9 @@ set breakindent           " Enable break indent
 set undofile              " Persistent undo
 set ignorecase            " Case insensitive searching
 set smartcase             " But use smart case when uppercase letters present
-set timeoutlen=300        " Time to wait for a mapped sequence
+set notimeout             " Wait indefinitely for key sequences
+set ttimeout              " But timeout on key codes (for terminal compatibility)
+set ttimeoutlen=50        " Timeout for key codes (escape sequences)
 set completeopt=menuone,noselect " Completion options
 set termguicolors         " Enable true color support
 set noswapfile            " Disable swapfile
