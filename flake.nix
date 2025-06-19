@@ -11,11 +11,16 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nvim-config = builtins.fetchGit {
-          url = "https://github.com/realbogart/nvim.git";
-          rev = "3e50f0843d30d9ce413a182c97666d9f49f40a36";
-          submodules = true;
-        };
+        nvim-config = if (self ? rev) then
+          # Remote usage - fetch from GitHub with submodules
+          builtins.fetchGit {
+            url = "https://github.com/realbogart/nvim.git";
+            rev = self.rev;
+            submodules = true;
+          }
+        else
+          # Local usage - use self directly
+          self;
 
         dependencies = with pkgs; [
           neovim
@@ -33,6 +38,17 @@
           name = "nvim-johan";
           runtimeInputs = dependencies;
           text = ''
+            # Check if submodules are available
+            if [ ! -f "${nvim-config}/plugins/lazy.nvim/lua/lazy/init.lua" ]; then
+              echo "✗ Error: lazy.nvim plugin not found."
+              echo ""
+              echo "For local usage, initialize submodules first:"
+              echo "  git submodule update --init --recursive"
+              echo "  nix run ."
+              echo ""
+              exit 1
+            fi
+            
             export XDG_CONFIG_HOME=${nvim-config}
             export NVIM_APPNAME='./'
             export TERM=tmux-256color
