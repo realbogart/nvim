@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
@@ -11,16 +12,7 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nvim-config = if (self ? rev) then
-          # Remote usage - fetch from GitHub with submodules
-          builtins.fetchGit {
-            url = "https://github.com/realbogart/nvim.git";
-            rev = self.rev;
-            submodules = true;
-          }
-        else
-          # Local usage - use self directly
-          self;
+        nvim-config = self;
 
         dependencies = with pkgs; [
           neovim
@@ -48,7 +40,7 @@
               echo ""
               exit 1
             fi
-            
+
             export XDG_CONFIG_HOME=${nvim-config}
             export NVIM_APPNAME='./'
             export TERM=tmux-256color
