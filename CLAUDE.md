@@ -76,8 +76,46 @@ Plugins must be updated manually by pulling changes in their respective director
 - Plugin-specific mappings: Edit the relevant plugin config in `lua/lazy/`
 - Global Lua mappings: Edit `lua/global-keymaps.lua`
 
+## Nix Flake Integration
+
+This configuration includes a `flake.nix` for reproducible Neovim environments using Nix.
+
+### Nix Setup Commands
+
+**Prerequisites**: Make sure git submodules are initialized:
+```bash
+git submodule update --init --recursive
+```
+
+**Usage**:
+```bash
+# Enter development shell with all dependencies
+nix develop
+
+# Run Neovim with reproducible environment (must run from nvim directory)
+nix run
+
+# Build the Neovim package
+nix build
+```
+
+### Nix Architecture
+
+- **Local Configuration**: Uses the current directory as the configuration source (no remote fetching)
+- **Submodule Handling**: Copies plugins from the current working directory at runtime (requires initialized submodules)
+- **Dependencies**: Includes all required LSP servers, formatters, and tools:
+  - neovim, ripgrep, git, fzf, jq
+  - nil (Nix LSP), stylua (Lua formatter), prettierd (JS/TS formatter)
+  - python-lsp-server, terraform-ls, powershell, zig
+- **Isolation**: Creates temporary XDG_CONFIG_HOME to avoid conflicts
+- **Package Output**: `nvim-johan` executable with all dependencies
+
+**Important**: Always run `nix run` from the nvim configuration directory to ensure plugins are available.
+
 ### Development Notes
 
 This configuration has no central build/test/lint commands. Individual plugins maintain their own tooling. The configuration is designed to be self-contained and work offline.
 
 The hybrid approach leverages VimScript for traditional Vim functionality while using Lua for modern Neovim features like LSP, TreeSitter, and advanced plugin configurations.
+
+The Nix flake provides additional reproducibility for development environments and deployment scenarios.
