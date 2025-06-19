@@ -11,7 +11,11 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nvim-config = self;
+        nvim-config = builtins.fetchGit {
+          url = "https://github.com/realbogart/nvim.git";
+          rev = "c40697bbdd3f12fadf2763642e4de1ace68ed973";
+          submodules = true;
+        };
 
         dependencies = with pkgs; [
           neovim
@@ -29,33 +33,10 @@
           name = "nvim-johan";
           runtimeInputs = dependencies;
           text = ''
-
-            XDG_CONFIG_HOME=$(mktemp -d)
-            export XDG_CONFIG_HOME
-            mkdir -p "$XDG_CONFIG_HOME/nvim-johan"
-
-            # Copy the complete configuration including plugins
-            cp -a ${nvim-config}/. "$XDG_CONFIG_HOME/nvim-johan"/
-            chmod -R u+w "$XDG_CONFIG_HOME"
-
-            export NVIM_APPNAME='nvim-johan'
+            export XDG_CONFIG_HOME=${nvim-config}
+            export NVIM_APPNAME='./'
             export TERM=tmux-256color
             export LANG=en_US.UTF-8
-
-            # Verify that lazy.nvim exists and has content
-            if [ ! -f "$XDG_CONFIG_HOME/nvim-johan/plugins/lazy.nvim/lua/lazy/init.lua" ]; then
-              echo "✗ Error: lazy.nvim plugin not found or incomplete."
-              echo ""
-              echo "For local usage:"
-              echo "  git submodule update --init --recursive"
-              echo "  nix run ."
-              echo ""
-              echo "For remote usage:"
-              echo "  nix run 'github:realbogart/nvim?submodules=1'"
-              echo ""
-              exit 1
-            fi
-
             nvim "$@"
           '';
         };
