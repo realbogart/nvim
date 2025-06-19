@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    # Automatically fetch submodules when this flake is used
-    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
@@ -13,7 +11,7 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        # Use self - submodules should be fetched automatically with inputs.self.submodules = true
+        # The submodules should be available when the flake is fetched with submodules=1
         nvim-config = self;
 
         dependencies = with pkgs; [
@@ -48,12 +46,12 @@
             if [ ! -d "$XDG_CONFIG_HOME/nvim-johan/plugins/lazy.nvim" ]; then
               echo "✗ Error: lazy.nvim plugin not found."
               echo ""
+              echo "This flake requires submodules to be fetched."
+              echo ""
               echo "If you're running this locally:"
               echo "  git submodule update --init --recursive"
               echo ""
-              echo "For remote usage, try:"
-              echo "  nix run github:realbogart/nvim"
-              echo "  OR if submodules aren't fetched automatically:"
+              echo "For remote usage, you must explicitly enable submodules:"
               echo "  nix run 'github:realbogart/nvim?submodules=1'"
               echo ""
               exit 1
@@ -66,10 +64,10 @@
         devShells.default = pkgs.mkShell {
           packages = dependencies ++ [ packages.default ];
           shellHook = ''
+
             echo "Neovim development environment loaded"
             echo "Run 'nvim-johan' to start neovim with the full configuration"
           '';
         };
       });
 }
-
