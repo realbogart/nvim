@@ -13,7 +13,7 @@
 
         nvim-config = builtins.fetchGit {
           url = "https://github.com/realbogart/nvim.git";
-          rev = "c40697bbdd3f12fadf2763642e4de1ace68ed973";
+          rev = "8e41d39ae3f91e4c9f3b6f446b08a4a35dadc1a7";
           submodules = true;
         };
 
