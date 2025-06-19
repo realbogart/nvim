@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
@@ -12,7 +11,11 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nvim-config = self;
+        nvim-config = builtins.fetchGit {
+          url = "https://github.com/realbogart/nvim.git";
+          ref = "master";
+          submodules = true;
+        };
 
         dependencies = with pkgs; [
           neovim
