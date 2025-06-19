@@ -1,10 +1,11 @@
 {
   description = "My neovim setup";
 
+  inputs.self.submodules = true;
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
