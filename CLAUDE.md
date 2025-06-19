@@ -84,11 +84,14 @@ This configuration includes a `flake.nix` for reproducible Neovim environments u
 
 **Remote Usage** (from anywhere):
 ```bash
-# Run from GitHub - submodules are automatically fetched
+# Primary method - submodules should be automatically fetched
 nix run github:realbogart/nvim
 
+# Fallback if submodules aren't fetched automatically
+nix run 'github:realbogart/nvim?submodules=1'
+
 # Or use a specific revision for reproducibility
-nix run github:realbogart/nvim/COMMIT-HASH
+nix run 'github:realbogart/nvim/COMMIT-HASH?submodules=1'
 ```
 
 **Local Usage**:
@@ -105,7 +108,8 @@ nix build
 ### Nix Architecture
 
 - **Portable Design**: Can be run from anywhere using `github:realbogart/nvim`
-- **Automatic Submodules**: Uses `inputs.self.submodules = true` to automatically fetch all plugin submodules
+- **Submodule Support**: Uses `inputs.self.submodules = true` to attempt automatic submodule fetching
+- **Fallback Option**: `?submodules=1` parameter as backup for guaranteed submodule fetching
 - **Dependencies**: Includes all required LSP servers, formatters, and tools:
   - neovim, ripgrep, git, fzf, jq
   - nil (Nix LSP), stylua (Lua formatter), prettierd (JS/TS formatter)
@@ -113,7 +117,7 @@ nix build
 - **Isolation**: Creates temporary XDG_CONFIG_HOME to avoid conflicts with existing nvim configs
 - **Package Output**: `nvim-johan` executable with all dependencies
 
-**Key Feature**: Submodules are automatically fetched without requiring any special syntax from users.
+**Note**: The `inputs.self.submodules = true` feature is relatively new. Use the `?submodules=1` fallback if plugins don't load properly.
 
 ### Development Notes
 

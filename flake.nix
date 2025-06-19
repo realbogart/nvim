@@ -13,7 +13,7 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        # The config source - this will include submodules when fetched remotely
+        # Use self - submodules should be fetched automatically with inputs.self.submodules = true
         nvim-config = self;
 
         dependencies = with pkgs; [
@@ -51,10 +51,11 @@
               echo "If you're running this locally:"
               echo "  git submodule update --init --recursive"
               echo ""
-              echo "For remote usage, simply run:"
+              echo "For remote usage, try:"
               echo "  nix run github:realbogart/nvim"
+              echo "  OR if submodules aren't fetched automatically:"
+              echo "  nix run 'github:realbogart/nvim?submodules=1'"
               echo ""
-              echo "Submodules are automatically fetched thanks to inputs.self.submodules = true"
               exit 1
             fi
 
