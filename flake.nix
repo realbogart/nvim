@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
@@ -43,17 +42,15 @@
             export TERM=tmux-256color
             export LANG=en_US.UTF-8
 
-            # Verify that lazy.nvim exists
-            if [ ! -d "$XDG_CONFIG_HOME/nvim-johan/plugins/lazy.nvim" ]; then
-              echo "✗ Error: lazy.nvim plugin not found."
-              echo ""
-              echo "This flake requires submodules to be fetched."
+            # Verify that lazy.nvim exists and has content
+            if [ ! -f "$XDG_CONFIG_HOME/nvim-johan/plugins/lazy.nvim/lua/lazy/init.lua" ]; then
+              echo "✗ Error: lazy.nvim plugin not found or incomplete."
               echo ""
               echo "For local usage:"
               echo "  git submodule update --init --recursive"
               echo "  nix run ."
               echo ""
-              echo "For remote usage with submodules:"
+              echo "For remote usage:"
               echo "  nix run 'github:realbogart/nvim?submodules=1'"
               echo ""
               exit 1
