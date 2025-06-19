@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    # Automatically fetch submodules when this flake is used
+    self.submodules = true;
   };
 
   outputs = { self, nixpkgs, flake-utils }:
@@ -11,8 +13,8 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        # Use current directory (without submodules, we'll handle them separately)
-        nvim-config = ./.;
+        # The config source - this will include submodules when fetched remotely
+        nvim-config = self;
 
         dependencies = with pkgs; [
           neovim
@@ -33,38 +35,29 @@
             XDG_CONFIG_HOME=$(mktemp -d)
             export XDG_CONFIG_HOME
             mkdir -p "$XDG_CONFIG_HOME/nvim-johan"
-            
-            # Copy base configuration (without plugins)
+
+            # Copy the complete configuration including plugins
             cp -a ${nvim-config}/. "$XDG_CONFIG_HOME/nvim-johan"/
             chmod -R u+w "$XDG_CONFIG_HOME"
-            
-            # Remove any empty plugins directory that might have been copied
-            rm -rf "$XDG_CONFIG_HOME/nvim-johan/plugins"
-            
-            # Copy plugins from the current working directory (where user runs the command)
-            # This assumes the user runs nix run from the nvim config directory
-            if [ -d "./plugins" ]; then
-              cp -a "./plugins" "$XDG_CONFIG_HOME/nvim-johan/"
-            elif [ -d "$PWD/plugins" ]; then
-              cp -a "$PWD/plugins" "$XDG_CONFIG_HOME/nvim-johan/"
-            else
-              echo "Error: plugins directory not found in current directory"
-              echo "Make sure to run 'nix run' from the nvim directory with initialized submodules"
-              echo "Current directory: $PWD"
-              echo "Run: git submodule update --init --recursive"
-              exit 1
-            fi
+
             export NVIM_APPNAME='nvim-johan'
             export TERM=tmux-256color
             export LANG=en_US.UTF-8
-            
-            # Verify setup
+
+            # Verify that lazy.nvim exists
             if [ ! -d "$XDG_CONFIG_HOME/nvim-johan/plugins/lazy.nvim" ]; then
-              echo "✗ Error: lazy.nvim not found. Make sure git submodules are initialized:"
+              echo "✗ Error: lazy.nvim plugin not found."
+              echo ""
+              echo "If you're running this locally:"
               echo "  git submodule update --init --recursive"
+              echo ""
+              echo "For remote usage, simply run:"
+              echo "  nix run github:realbogart/nvim"
+              echo ""
+              echo "Submodules are automatically fetched thanks to inputs.self.submodules = true"
               exit 1
             fi
-            
+
             nvim "$@"
           '';
         };
@@ -73,7 +66,7 @@
           packages = dependencies ++ [ packages.default ];
           shellHook = ''
             echo "Neovim development environment loaded"
-            echo "Run 'nvim-johan' to start neovim with the local configuration"
+            echo "Run 'nvim-johan' to start neovim with the full configuration"
           '';
         };
       });

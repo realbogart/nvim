@@ -82,35 +82,38 @@ This configuration includes a `flake.nix` for reproducible Neovim environments u
 
 ### Nix Setup Commands
 
-**Prerequisites**: Make sure git submodules are initialized:
+**Remote Usage** (from anywhere):
 ```bash
-git submodule update --init --recursive
+# Run from GitHub - submodules are automatically fetched
+nix run github:realbogart/nvim
+
+# Or use a specific revision for reproducibility
+nix run github:realbogart/nvim/COMMIT-HASH
 ```
 
-**Usage**:
+**Local Usage**:
 ```bash
-# Enter development shell with all dependencies
-nix develop
+# First, initialize submodules
+git submodule update --init --recursive
 
-# Run Neovim with reproducible environment (must run from nvim directory)
+# Then run locally
 nix run
-
-# Build the Neovim package
+nix develop
 nix build
 ```
 
 ### Nix Architecture
 
-- **Local Configuration**: Uses the current directory as the configuration source (no remote fetching)
-- **Submodule Handling**: Copies plugins from the current working directory at runtime (requires initialized submodules)
+- **Portable Design**: Can be run from anywhere using `github:realbogart/nvim`
+- **Automatic Submodules**: Uses `inputs.self.submodules = true` to automatically fetch all plugin submodules
 - **Dependencies**: Includes all required LSP servers, formatters, and tools:
   - neovim, ripgrep, git, fzf, jq
   - nil (Nix LSP), stylua (Lua formatter), prettierd (JS/TS formatter)
   - python-lsp-server, terraform-ls, powershell, zig
-- **Isolation**: Creates temporary XDG_CONFIG_HOME to avoid conflicts
+- **Isolation**: Creates temporary XDG_CONFIG_HOME to avoid conflicts with existing nvim configs
 - **Package Output**: `nvim-johan` executable with all dependencies
 
-**Important**: Always run `nix run` from the nvim configuration directory to ensure plugins are available.
+**Key Feature**: Submodules are automatically fetched without requiring any special syntax from users.
 
 ### Development Notes
 
