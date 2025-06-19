@@ -11,7 +11,6 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        # The submodules should be available when the flake is fetched with submodules=1
         nvim-config = self;
 
         dependencies = with pkgs; [
@@ -30,6 +29,7 @@
           name = "nvim-johan";
           runtimeInputs = dependencies;
           text = ''
+
             XDG_CONFIG_HOME=$(mktemp -d)
             export XDG_CONFIG_HOME
             mkdir -p "$XDG_CONFIG_HOME/nvim-johan"
@@ -51,8 +51,7 @@
               echo "If you're running this locally:"
               echo "  git submodule update --init --recursive"
               echo ""
-              echo "For remote usage, you must explicitly enable submodules:"
-              echo "  nix run 'github:realbogart/nvim?submodules=1'"
+              echo "For remote usage, submodules should be automatically included."
               echo ""
               exit 1
             fi
