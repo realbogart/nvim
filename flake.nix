@@ -11,11 +11,7 @@
       let
         pkgs = import nixpkgs { inherit system; };
 
-        nvim-config = builtins.fetchGit {
-          url = "https://github.com/realbogart/nvim.git";
-          ref = "master";
-          submodules = true;
-        };
+        nvim-config = self;
 
         dependencies = with pkgs; [
           neovim
@@ -52,10 +48,12 @@
               echo ""
               echo "This flake requires submodules to be fetched."
               echo ""
-              echo "If you're running this locally:"
+              echo "For local usage:"
               echo "  git submodule update --init --recursive"
+              echo "  nix run ."
               echo ""
-              echo "For remote usage, submodules should be automatically included."
+              echo "For remote usage with submodules:"
+              echo "  nix run 'github:realbogart/nvim?submodules=1'"
               echo ""
               exit 1
             fi
