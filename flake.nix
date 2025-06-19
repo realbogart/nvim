@@ -30,17 +30,6 @@
           name = "nvim-johan";
           runtimeInputs = dependencies;
           text = ''
-            # Check if submodules are available
-            if [ ! -f "${nvim-config}/plugins/lazy.nvim/lua/lazy/init.lua" ]; then
-              echo "✗ Error: lazy.nvim plugin not found."
-              echo ""
-              echo "For local usage, initialize submodules first:"
-              echo "  git submodule update --init --recursive"
-              echo "  nix run ."
-              echo ""
-              exit 1
-            fi
-
             export XDG_CONFIG_HOME=${nvim-config}
             export NVIM_APPNAME='./'
             export TERM=tmux-256color
