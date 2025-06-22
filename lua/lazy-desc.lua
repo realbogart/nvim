@@ -16,6 +16,7 @@ return {
 	require("lazy.nvim-treesitter"),
 	require("lazy.nvim-lspconfig"),
 	require("lazy.nvim-cmp"),
+	require("lazy.golf"),
 	require("lazy.gitsigns"),
 	require("lazy.obsidian"),
 	require("lazy.fugitive"),

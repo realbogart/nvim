@@ -118,3 +118,6 @@
 [submodule "plugins/nvim"]
 	path = plugins/nvim
 	url = git@github.com:catppuccin/nvim.git
+[submodule "plugins/golf"]
+	path = plugins/golf
+	url = git@github.com:vuciv/golf.git
