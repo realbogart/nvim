@@ -16,8 +16,6 @@ require("lazy").setup(require("lazy-desc"), { checker = { enabled = false } })
 require("global-options")
 require("global-keymaps")
 
-vim.opt.runtimepath:prepend(vim.fn.stdpath("config") .. "/treesitter-parsers")
-
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

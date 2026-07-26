@@ -24,6 +24,10 @@
           fzf
           prettierd
           jq
+          # Needed by :TSInstallAll to build parsers; the vendored ones in
+          # treesitter-parsers/ are used as-is when running from the store.
+          tree-sitter
+          gcc
         ];
       in rec {
         packages.default = pkgs.writeShellApplication {
