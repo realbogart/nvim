@@ -34,6 +34,69 @@ return {
 					vim.fn.jobstart({ "runghc", file }, { term = true, cwd = cwd })
 					vim.cmd.startinsert()
 				end, { buffer = event.buf, desc = "Run Haskell file", silent = true })
+				vim.keymap.set("n", "<leader>hw", function()
+					if not vim.env.TMUX or not vim.env.TMUX_PANE then
+						vim.notify("Open Neovim inside tmux to watch this file", vim.log.levels.WARN)
+						return
+					end
+					for _, tool in ipairs({ "tmux", "ghcid", "ghci" }) do
+						if vim.fn.executable(tool) ~= 1 then
+							vim.notify(tool .. " is not available on PATH", vim.log.levels.ERROR)
+							return
+						end
+					end
+					local file = vim.api.nvim_buf_get_name(event.buf)
+					if file == "" then
+						vim.notify("Save the Haskell file before watching it", vim.log.levels.WARN)
+						return
+					end
+					local saved, err = pcall(vim.cmd.update)
+					if not saved then
+						vim.notify(tostring(err), vim.log.levels.ERROR)
+						return
+					end
+					local command = {
+						"tmux",
+						"split-window",
+						"-h",
+						"-d",
+						"-t",
+						vim.env.TMUX_PANE,
+						"-c",
+						vim.fn.getcwd(),
+						"env",
+					}
+					-- Use the editor's toolchain, including direnv, rather than the
+					-- potentially older environment stored by the tmux server.
+					local variables = {
+						"PATH",
+						"NIX_GHC",
+						"NIX_GHCPKG",
+						"NIX_GHC_LIBDIR",
+						"NIX_GHC_DOCDIR",
+						"GHC_PACKAGE_PATH",
+						"GHC_ENVIRONMENT",
+					}
+					for _, name in ipairs(variables) do
+						vim.list_extend(command, { "-u", name })
+					end
+					for _, name in ipairs(variables) do
+						if vim.env[name] then
+							table.insert(command, name .. "=" .. vim.env[name])
+						end
+					end
+					local ghci = vim.fn.shellescape(vim.fn.exepath("ghci"))
+						.. " -ignore-dot-ghci "
+						.. vim.fn.shellescape(file)
+					vim.list_extend(
+						command,
+						{ vim.fn.exepath("ghcid"), "--command=" .. ghci, "--test=main", "--warnings" }
+					)
+					local result = vim.system(command, { text = true }):wait()
+					if result.code ~= 0 then
+						vim.notify("Could not open ghcid pane: " .. result.stderr, vim.log.levels.ERROR)
+					end
+				end, { buffer = event.buf, desc = "Watch Haskell file in tmux", silent = true })
 			end,
 		})
 
