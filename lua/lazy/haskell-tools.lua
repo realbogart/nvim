@@ -10,6 +10,33 @@ return {
 	branch = "2.x.x",
 	ft = { "haskell", "lhaskell" },
 	init = function()
+		vim.api.nvim_create_autocmd("FileType", {
+			group = vim.api.nvim_create_augroup("HaskellRun", { clear = true }),
+			pattern = { "haskell", "lhaskell" },
+			callback = function(event)
+				vim.keymap.set("n", "<leader>hr", function()
+					local file = vim.api.nvim_buf_get_name(event.buf)
+					if file == "" then
+						vim.notify("Save the Haskell file before running it", vim.log.levels.WARN)
+						return
+					end
+					if vim.fn.executable("runghc") ~= 1 then
+						vim.notify("runghc is not available on PATH", vim.log.levels.ERROR)
+						return
+					end
+					local saved, err = pcall(vim.cmd.update)
+					if not saved then
+						vim.notify(tostring(err), vim.log.levels.ERROR)
+						return
+					end
+					local cwd = vim.fn.getcwd()
+					vim.cmd("botright 12new")
+					vim.fn.jobstart({ "runghc", file }, { term = true, cwd = cwd })
+					vim.cmd.startinsert()
+				end, { buffer = event.buf, desc = "Run Haskell file", silent = true })
+			end,
+		})
+
 		-- Evaluate only when haskell-tools loads, but register before its ftplugin.
 		vim.g.haskell_tools = function()
 			-- Function to check if local hoogle server is running
